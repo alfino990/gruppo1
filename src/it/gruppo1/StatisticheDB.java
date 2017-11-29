@@ -21,7 +21,7 @@ public class StatisticheDB {
 
 			try {
 				Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/statistiche", "root",
-						"juve");
+						"alfino610");
 while(true) {
 				int scelta;
 
