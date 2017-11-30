@@ -63,8 +63,7 @@ while(true) {
 						System.out.println("Inserisci goal ospite: ");
 						int goal_ospite = inserimento.nextInt();
 					
-						
-						
+												
 						PreparedStatement ps = c.prepareStatement("INSERT INTO incontro ( squadra_casa,squadra_ospite,goal_casa,goal_ospite,competizione) VALUES(?,?,?,?,?) ");
 						
 						ps.setString(1, squadra_casa);
