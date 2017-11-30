@@ -21,11 +21,11 @@ public class StatisticheDB {
 
 			try {
 				Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/statistiche", "root",
-						"alfino610");
+						"juve");
 while(true) {
 				int scelta;
 
-				System.out.println("Benvenuti in STATISTICHE");
+				System.out.println("Benvenuti in STATISTICHE:");
 				System.out.println();
 				System.out.println("Premi 0 per inserire un risultato (Squadra_Casa, Squadra_Ospite, Goal_Casa, Goal_Ospite)");
 				System.out.println();
