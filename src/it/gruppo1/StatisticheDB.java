@@ -18,8 +18,8 @@ public class StatisticheDB {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			try {
-				Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/statistiche", "root",
-						"juve");
+				Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/statistiche?useSSL=false", "root",
+						"root");
 while(true) {
 				int scelta;
 
@@ -49,24 +49,21 @@ while(true) {
 					
 					case 0:
 						Scanner inserimento = new Scanner(System.in);
-						Scanner inserimento1 = new Scanner(System.in);
-						Scanner inserimento2 = new Scanner(System.in);
-						Scanner inserimento3 = new Scanner(System.in);
+
 						flag=false;
 						System.out.println("Inserisci squadra casa: ");
 						String squadra_casa=inserimento.nextLine();
-						
+					
 						System.out.println("Inserisci squadra ospite: ");
-						String squadra_ospite = inserimento1.nextLine();
-					
+						String squadra_ospite = inserimento.nextLine();
+						
 						System.out.println("Inserisci goal casa: ");
-						int goal_casa = inserimento2.nextInt();
-				
+						int goal_casa = inserimento.nextInt();
+						
 						System.out.println("Inserisci goal ospite: ");
-						int goal_ospite = inserimento3.nextInt();
-				
+						int goal_ospite = inserimento.nextInt();
 					
-					
+						
 						
 						PreparedStatement ps = c.prepareStatement("INSERT INTO incontro ( squadra_casa,squadra_ospite,goal_casa,goal_ospite,competizione) VALUES(?,?,?,?,?) ");
 						
@@ -75,7 +72,13 @@ while(true) {
 						ps.setInt(3, goal_casa);
 						ps.setInt(4, goal_ospite);
 						ps.setString(5, "serie_a");
+					
+						
+						
+						
+						
 						ps.executeUpdate();
+					
 						break;
 					
 					
@@ -206,18 +209,9 @@ while(true) {
 					}
 
 				}
+		
 
-				/*
-				 * Statement s = c.createStatement(); ResultSet rs =
-				 * s.executeQuery("SELECT * FROM incontro;");
-				 * 
-				 * while(rs.next()) { System.out.println("Row "+rs.getRow()); for(int i = 1; i <
-				 * rs.getMetaData().getColumnCount(); i++) {
-				 * System.out.println(rs.getMetaData().getColumnLabel(i)+": " // stampa il nome
-				 * della colonna i +rs.getString(i)); // stampa il contenuto della cella i
-				 * rs.getMetaData().getColumnLabel(i).toString(); } }
-				 * 
-				 */
+
 }
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -228,7 +222,7 @@ while(true) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
 
 }
