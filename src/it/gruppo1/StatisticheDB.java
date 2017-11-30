@@ -25,7 +25,7 @@ public class StatisticheDB {
 while(true) {
 				int scelta;
 
-				System.out.println("Benvenuti in STATISTICHE:");
+				System.out.println("Benvenuti in STATISTICHE");
 				System.out.println();
 				System.out.println("Premi 0 per inserire un risultato (Squadra_Casa, Squadra_Ospite, Goal_Casa, Goal_Ospite)");
 				System.out.println();
